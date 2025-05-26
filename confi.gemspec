@@ -1,4 +1,4 @@
-#$LOAD_PATH.push File.expand_path("lib", __dir__)
+# $LOAD_PATH.push File.expand_path("lib", __dir__)
 
 VERSION = "0.0.2"
 
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
-  s.required_ruby_version = '~> 3'
+  s.required_ruby_version = "~> 3"
 
   s.add_development_dependency "cuco", ">= 0"
   s.add_development_dependency "ricecream", ">= 0"

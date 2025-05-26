@@ -9,11 +9,11 @@ end
 describe User do
   let(:int) { rand 1..10 }
   let(:symb) { :symbol }
-  let(:hsh) { { "a"=>1, "b"=>2 } }
+  let(:hsh) { {"a" => 1, "b" => 2} }
   let(:user) { User.new }
 
   it "rejects uninitialized attribute" do
-    assert_raises() {
+    assert_raises {
       user.unknown
     }
   end
@@ -31,7 +31,7 @@ describe User do
   end
 
   it "configures with block" do
-    user.configure() do |spec|
+    user.configure do |spec|
       spec.c = :c
     end
 

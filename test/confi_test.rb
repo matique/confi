@@ -4,7 +4,7 @@ require_relative "../lib/confi"
 describe Confi do
   let(:int) { 123 }
   let(:list) { [1, 2, 3] }
-  let(:hsh) { { "a"=>1, "b"=>2, "c"=>3 } }
+  let(:hsh) { {"a" => 1, "b" => 2, "c" => 3} }
   let(:symb) { :symbol }
 
   it "putter & getter" do
@@ -31,6 +31,7 @@ describe Confi do
   it "dumps (private method)" do
     Confi.configure(hsh)
     res = Confi.send(:dump)
+    assert res
     check hsh
   end
 

@@ -1,4 +1,4 @@
-require 'yaml'
+require "yaml"
 
 module Confi
   extend self
@@ -20,13 +20,13 @@ module Confi
     @keys ||= []
     @keys << key.to_sym
     name = key.to_s
-    writer = "#{name.to_s}="
+    writer = "#{name}="
     var_name = "@AWE_#{name}"
 
-    self.class.class_eval %{
+    self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
       def #{name};     #{var_name}; end
       def #{name}=(x); #{var_name} = x; end
-    }
+    RUBY
     send(writer, value)
   end
 
