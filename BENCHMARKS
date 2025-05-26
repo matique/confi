@@ -1,0 +1,61 @@
+2025-05-09
+## Pretty similar to config_context
+
+Warming up --------------------------------------
+        hsh[:hugo]:      2.147M i/100ms
+ hsh[:hugo] = true:      1.362M i/100ms
+       hsh["hugo"]:      1.878M i/100ms
+hsh["hugo"] = true:      1.286M i/100ms
+------- ConfigWe (empty) --------
+                         2.736M i/100ms
+          C[:hugo]:      1.120M i/100ms
+   C[:hugo] = true:     84.733k i/100ms
+  C["hugo"] = true:     80.619k i/100ms
+     C.hugo = true:     82.741k i/100ms
+            C.hugo:    153.232k i/100ms
+           C.hugo?:     74.874k i/100ms
+Calculating -------------------------------------
+        hsh[:hugo]:      19.504M (± 0.5%) i/s   (51.27 ns/i) -     98.745M in   5.062830s
+ hsh[:hugo] = true:      13.603M (± 0.6%) i/s   (73.51 ns/i) -     68.114M in   5.007367s
+       hsh["hugo"]:      18.638M (± 0.5%) i/s   (53.65 ns/i) -     93.921M in   5.039396s
+hsh["hugo"] = true:      12.845M (± 0.3%) i/s   (77.85 ns/i) -     64.308M in   5.006338s
+------- ConfigWe (empty) --------
+                         27.121M (± 0.2%) i/s   (36.87 ns/i) -    136.807M in   5.044332s
+          C[:hugo]:      10.782M (± 0.3%) i/s   (92.75 ns/i) -     54.875M in   5.089476s
+   C[:hugo] = true:     836.221k (± 0.4%) i/s    (1.20 μs/i) -      4.237M in   5.066501s
+  C["hugo"] = true:     796.263k (± 0.6%) i/s    (1.26 μs/i) -      4.031M in   5.062494s
+     C.hugo = true:     824.600k (± 0.5%) i/s    (1.21 μs/i) -      4.137M in   5.017158s
+            C.hugo:       1.533M (± 0.3%) i/s  (652.36 ns/i) -      7.815M in   5.098116s
+           C.hugo?:     746.952k (± 0.5%) i/s    (1.34 μs/i) -      3.744M in   5.012089s
+
+## 2025-05-12
+Comparison:
+          ** (empty): 27111509.6 i/s
+    ** Confi (empty): 26932756.7 i/s - same-ish: difference falls within error
+               hsh: : 26510301.5 i/s - 1.02x  slower
+             Confi: : 26245957.6 i/s - 1.03x  slower
+        hsh[:hugo]: : 19037638.1 i/s - 1.42x  slower
+           confi.a: : 18973882.2 i/s - 1.43x  slower
+          hsh["b"]: : 18584138.4 i/s - 1.46x  slower
+           confi.b: : 17411496.8 i/s - 1.56x  slower
+ confi.hugo = true: : 16043383.7 i/s - 1.69x  slower
+ hsh[:hugo] = true: : 13382994.7 i/s - 2.03x  slower
+      hsh["b"] = 3: : 12785427.7 i/s - 2.12x  slower
+
+## 2025-05-26
+Comparison:
+    ** Monfi (empty): 26959228.3 i/s
+          ** (empty): 26904047.7 i/s - same-ish: difference falls within error
+               hsh: : 26169824.5 i/s - 1.03x  slower
+              user: : 26086836.3 i/s - 1.03x  slower
+     ** User (empty): 25995837.8 i/s - 1.04x  slower
+        hsh[:hugo]: : 19773716.2 i/s - 1.36x  slower
+            user.b: : 19218724.4 i/s - 1.40x  slower
+          hsh["b"]: : 19010791.2 i/s - 1.42x  slower
+            user.a: : 18703569.7 i/s - 1.44x  slower
+           Monfi.a: : 18192514.3 i/s - 1.48x  slower
+  user.hugo = true: : 16115497.3 i/s - 1.67x  slower
+           Monfi.b: : 15034036.1 i/s - 1.79x  slower
+ hsh[:hugo] = true: : 13505658.0 i/s - 2.00x  slower
+ Monfi.hugo = true: : 13167695.3 i/s - 2.05x  slower
+      hsh["b"] = 3: : 12647814.9 i/s - 2.13x  slower
