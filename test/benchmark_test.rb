@@ -4,7 +4,7 @@ require "test_helper"
 require_relative "../lib/confi"
 require "benchmark"
 require "benchmark/ips"
-# ENV["MORE"] = "true"
+ ENV["MORE"] = "true"
 
 class User
   include Confi
@@ -28,15 +28,16 @@ describe "ConfigWe timings" do
       x.report("hsh[\"b\"] = 3: ") { hsh["b"] = 3 }
 
       x.report("** Confi (empty)") {}
-      x.report("Confi.b: ") { Confi.b }
+      # x.report("Confi.b: ") { Confi.b } # expected fail
       x.report("Confi.hugo = true: ") { Confi.hugo = true }
-      x.report("Confi.a: ") { Confi.a }
+      x.report("Confi.hugo: ") { Confi.hugo }
+      # x.report("Confi.a: ") { Confi.a } # expected fail
 
       x.report("** User (empty)") {}
       x.report("user: ") { user }
-      x.report("user.b: ") { user.b }
+      # x.report("user.unknown: ") { user.unknown } # expected fail
       x.report("user.hugo = true: ") { user.hugo = true }
-      x.report("user.a: ") { user.a }
+      x.report("user.hugo: ") { user.hugo }
 
       x.compare!
     end

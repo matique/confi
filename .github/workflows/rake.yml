@@ -1,0 +1,25 @@
+name: Rake
+
+on: [push]
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+#        ruby_version: [head, "3.4", "3.0"]
+        ruby_version: ["3.4"]
+        gemfile:
+          - Gemfile
+#        exclude:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby_version }}
+          bundler-cache: true # 'bundle install' and cache
+      - name: Build and test with Rake
+        run: bundle exec rake
