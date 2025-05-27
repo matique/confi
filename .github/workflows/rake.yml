@@ -21,5 +21,11 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby_version }}
           bundler-cache: true # 'bundle install' and cache
+      - name: Bundle install
+        run: |
+          bundle config set frozen false
+          bundle config path /home/runner/bundle
+          bundle install
+          bundle update
       - name: Build and test with Rake
         run: bundle exec rake

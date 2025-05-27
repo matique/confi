@@ -4,7 +4,7 @@ require "test_helper"
 require_relative "../lib/confi"
 require "benchmark"
 require "benchmark/ips"
- ENV["MORE"] = "true"
+# ENV["MORE"] = "true"
 
 class User
   include Confi
@@ -14,7 +14,7 @@ describe "ConfigWe timings" do
   it "times ips" do
     return unless ENV["MORE"]
 
-    p "********************** ConfigWe timings"
+    p "********************** Confi timings"
     hsh = {"a" => 1, "b" => 2, :hugo => 3}
     user = User.new
     user.configure(hsh)
