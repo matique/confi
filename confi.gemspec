@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = "~> 3"
 
 #  s.add_development_dependency "cuco", ">= 0"
-#  s.add_development_dependency "ricecream", ">= 0"
 #  s.add_development_dependency "simplecov", ">= 0"
 #  s.add_development_dependency "standard", ">= 0"
 end

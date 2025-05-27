@@ -10,6 +10,6 @@ group :test do
   gem "minitest"
   gem "rake"
   gem "ricecream", require: false
-#  gem "simplecov", require: false
-#  gem "standard", require: false
+  gem "simplecov", require: false
+  gem "standard", require: false
 end
