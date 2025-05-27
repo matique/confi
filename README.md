@@ -6,13 +6,15 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
 
+UNDER CONSTRUCTION
+
 Executes good old shell/bash scripts locally as well as remotely.
 The environment is set by a ".yml" configuration file.
 An array environment variable triggers multiple calls of the script.
 
 ## Installation
 
-  gem install we
+  gem install confi
 
 
 ## Usage
