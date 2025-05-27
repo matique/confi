@@ -1,11 +1,11 @@
 # $LOAD_PATH.push File.expand_path("lib", __dir__)
 
-VERSION = "0.0.2"
+VERSION = "0.1.1"
 
 Gem::Specification.new do |s|
   s.name = "confi"
   s.version = VERSION
-  s.summary = "Auto attr_accessor for a kind of config"
+  s.summary = "Auto attr_accessor for a kind of configuration"
   s.description = s.summary
 
   s.authors = ["Dittmar Krall"]

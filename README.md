@@ -6,33 +6,63 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
 
-UNDER CONSTRUCTION
+A simple and efficient "configuration" gem for Ruby
+(can be used in Rails as well).
+Options can be initialized as required and later be accessed.
 
-Executes good old shell/bash scripts locally as well as remotely.
-The environment is set by a ".yml" configuration file.
-An array environment variable triggers multiple calls of the script.
+A global *Confi* (the usual usage)
+as well as an instance (not recommended) configuration
+are supported.
+
+See *Usage* below.
+
 
 ## Installation
 
-  gem install confi
-
+~~~~ruby
+# Gemfile
+...
+gem "confi"
+...
+~~~~
 
 ## Usage
 
-    we ... [options]
-    we hello.rb
+~~~~ruby
+require "confi"
+...
+Confi.debug = true
+...
+if Confi.debug
+  ...
+end
+...
+~~~~
 
-## Options
+~~~~ruby
+require "confi"
 
-    -l, --[no-]list          Lists available scripts
-    -r, --remote ["host"]    remote host or comma separated hosts
-    -e, --[no-]each          Lists each remote command (no execution)
-    -s, --[no-]silent        run silently; suppress output
-    -v, --[no-]verbose       Enable verbose output
-    -n, --[no-]noop          Suppress execution of commannds
-    -h, --help               Show this message
-    -V, --version            Print version
+class User
+include Confi
+end
+...
+user = User.new
+user.debug = false
+...
+if user.debug
+  ...
+end
+...
+~~~~
 
+~~~~ruby
+...
+# Not yet initialized attribute
+if Confi.debug  # NoMethodError: undefined method 'debug'
+  ...
+end
+...
+~~~~
 
 
 ## Miscellaneous
