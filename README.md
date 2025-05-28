@@ -26,7 +26,7 @@ gem "confi"
 ...
 ~~~~
 
-## Usage
+## Usage (global Confi)
 
 ~~~~ruby
 require "confi"
@@ -39,19 +39,35 @@ end
 ...
 ~~~~
 
+
+## Configure (initialization)
+
+~~~~ruby
+Confi.configure(hash)
+~~~~
+
+~~~~ruby
+Confi.configure do |s|
+  s.option = :active
+  s.name = "name"
+end
+~~~~
+
+
+## Usage (in instances)
+
 ~~~~ruby
 require "confi"
 
-class User
-include Confi
+class User # a sample
+  include Confi
 end
 ...
+# create instance
 user = User.new
+
+# Functionality same as with Confi; use instance name
 user.debug = false
-...
-if user.debug
-  ...
-end
 ...
 ~~~~
 

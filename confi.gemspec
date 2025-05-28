@@ -1,6 +1,6 @@
 # $LOAD_PATH.push File.expand_path("lib", __dir__)
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 Gem::Specification.new do |s|
   s.name = "confi"

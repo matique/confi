@@ -12,16 +12,16 @@ module Confi
 
   def dump
     res = {}
-    @keys.uniq.each { |key| res[key] = send(key) }
+    @co_keys.uniq.each { |key| res[key] = send(key) }
     res
   end
 
   def accessors(key, value)
-    @keys ||= []
-    @keys << key.to_sym
+    @co_keys ||= []
+    @co_keys << key.to_sym
     name = key.to_s
     writer = "#{name}="
-    var_name = "@AWE_#{name}"
+    var_name = "@CO_#{name}"
 
     self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
       def #{name};     #{var_name}; end
