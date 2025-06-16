@@ -1,10 +1,10 @@
 # Confi
 
-[![Gem Version](https://badge.fury.io/rb/confi.svg)](http://badge.fury.io/rb/confi)
-[![GEM Downloads](https://img.shields.io/gem/dt/confi?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/confi)
-[![rake](https://github.com/matique/confi/actions/workflows/rake.yml/badge.svg)](https://github.com/matique/confi/actions/workflows/rake.yml)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
+[![Gem Version](https://img.shields.io/gem/v/confi?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/confi)
+[![Downloads](https://img.shields.io/gem/dt/confi?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/confi)
+[![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/confi/rake.yml?logo=github)](https://github.com/matique/confi/actions/workflows/rake.yml)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-168AFE.svg)](https://github.com/standardrb/standard)
+[![MIT License](https://img.shields.io/badge/license-MIT-168AFE.svg)](http://choosealicense.com/licenses/mit/)
 
 A simple and efficient "configuration" gem for Ruby
 (can be used in Rails as well).
@@ -16,15 +16,6 @@ are supported.
 
 See *Usage* below.
 
-
-## Installation
-
-~~~~ruby
-# Gemfile
-...
-gem "confi"
-...
-~~~~
 
 ## Usage (global Confi)
 
@@ -79,6 +70,20 @@ if Confi.debug  # NoMethodError: undefined method 'debug'
 end
 ...
 ~~~~
+
+
+## Installation
+
+As usual:
+
+~~~~ruby
+# Gemfile
+...
+gem "confi"
+...
+~~~~
+
+and run "bundle install".
 
 
 ## Miscellaneous
