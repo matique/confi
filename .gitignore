@@ -1,3 +1,5 @@
 # ~/.gitignore included
 
-*.log
+**/*.gem
+**/*.lock
+**/*.log

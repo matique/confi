@@ -9,9 +9,10 @@ Gem::Specification.new do |s|
   s.description = s.summary
 
   s.authors = ["Dittmar Krall"]
-  s.email = "dittmar.krall@gmail.com"
+  s.email = ["dittmar.krall@matiq.com", "dittmar.krall@gmail.com"]
   s.homepage = "https://github.com/matique/confi"
   s.license = "MIT"
+  s.platform = Gem::Platform::RUBY
 
   s.files = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
