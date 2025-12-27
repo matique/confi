@@ -1,6 +1,7 @@
 # $LOAD_PATH.push File.expand_path("lib", __dir__)
 
-VERSION = "0.1.3" # 2015-06-22
+VERSION = "0.1.4" # 2015-12-27
+# VERSION = "0.1.3" # 2015-06-22
 # VERSION = "0.1.2"
 
 Gem::Specification.new do |s|
