@@ -20,14 +20,19 @@ module Confi
     @co_keys ||= []
     @co_keys << key.to_sym
     name = key.to_s
-    writer = "#{name}="
-    var_name = "@CO_#{name}"
 
+    define_accessors(name)
+    send("#{name}=", value)
+  end
+
+  def define_accessors(name)
+    return if respond_to?(name)
+
+    var_name = "@CO_#{name}"
     self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
       def #{name};     #{var_name}; end
       def #{name}=(x); #{var_name} = x; end
     RUBY
-    send(writer, value)
   end
 
   def method_missing(method_name, *args)
