@@ -1,6 +1,7 @@
 # $LOAD_PATH.push File.expand_path("lib", __dir__)
 
-VERSION = "0.1.4" # 2015-12-27
+VERSION = "0.1.5" # 2016-04-03
+# VERSION = "0.1.4" # 2015-12-27
 # VERSION = "0.1.3" # 2015-06-22
 # VERSION = "0.1.2"
 
@@ -20,6 +21,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.required_ruby_version = ">= 3"
 
-  s.add_development_dependency "simplecov", ">= 0"
-  s.add_development_dependency "standard", ">= 0"
+  s.add_development_dependency "simplecov"
+  s.add_development_dependency "standard"
 end
