@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby_version: ["4.0", "3.4", "3.2"]
-        # ruby_version: [head, "3.4", "3.2"]
+        # ruby_version: [head, "4.0", "3.2"] # head fails 2026-09-09
         gemfile:
           - Gemfile
     runs-on: ubuntu-latest
